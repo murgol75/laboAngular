@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './events/events.component';
 import { UsersComponent } from './users/users.component';
 import { HomeComponent } from './components/home/home.component';
+import { ComponentsComponent } from './components/components.component';
 
 const routes: Routes = [
   // routes avec enfants

@@ -1,1 +1,10 @@
-<p>navbar works!</p>
+<div class="flex justify-between">
+    <p>logo</p>
+    <div class="flex">
+        <a class="mx-2" routerLink="/">Accueil</a>
+        <a class="mx-2" routerLink="/events/eventList">les évènements</a>
+        <p class="mx-2" *ngIf="connected">bonjour {{connectedUser}}</p>
+        <a class="mx-2" routerLink="/users/login" *ngIf="!connected">se connecter</a>
+        <a class="mx-2" routerLink="login" *ngIf="connected">se deconnecter</a>
+    </div>
+</div>

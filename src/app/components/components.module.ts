@@ -10,8 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 @NgModule({
   declarations: [
     ComponentsComponent,
-    HomeComponent,
-    NavbarComponent
+    
   ],
   imports: [
     CommonModule,
