@@ -1,1 +1,20 @@
-<p>event-details works!</p>
+<div class="flex justify-around text-center">
+    <div>
+        <img src="assets/img/meeting.png" alt="">
+    </div>
+    <div>
+        <a routerLink="events/eventList">retour à la liste des évènements</a>
+        <div>
+            <p *ngIf="eventowner">Annuler l'évènement</p>
+            <h2>NOM DE L'EVENEMENT</h2>
+            <p>Description de l'évènement</p>
+            <p>début de l'évènement</p>
+            <p>fin de l'évènement</p>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="eventowner">modifier l'évènement</button>
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-4">participer à l'évènement</button>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,10 +1,13 @@
-<div class="flex justify-between">
-    <p>logo</p>
+<div class="mx-8 mt-4 flex justify-between">
+    <div class="align-middle flex">
+        <img class="object-cover max-h-12" src="assets/img/logo2.png" alt="">
+        <p class="mt-2 ml-2 text-xl">Event Manager</p>
+    </div>
     <div class="flex">
-        <a class="mx-2" routerLink="/">Accueil</a>
-        <a class="mx-2" routerLink="/events/eventList">les évènements</a>
-        <p class="mx-2" *ngIf="connected">bonjour {{connectedUser}}</p>
-        <a class="mx-2" routerLink="/users/login" *ngIf="!connected">se connecter</a>
-        <a class="mx-2" routerLink="login" *ngIf="connected">se deconnecter</a>
+        <a class="mx-2 text-xl" routerLink="/">Accueil</a>
+        <a class="mx-2 text-xl" routerLink="/events/eventList">les évènements</a>
+        <p class="mx-2 text-xl" *ngIf="connected">bonjour {{connectedUser}}</p>
+        <a class="mx-2 text-xl" routerLink="/users/login" *ngIf="!connected">se connecter</a>
+        <a class="mx-2 text-xl" routerLink="login" *ngIf="connected">se deconnecter</a>
     </div>
 </div>

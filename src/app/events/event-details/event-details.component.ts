@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./event-details.component.scss']
 })
 export class EventDetailsComponent {
-
+  eventowner : boolean = true;
 }
