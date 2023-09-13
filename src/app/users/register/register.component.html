@@ -1,1 +1,24 @@
-<p>register works!</p>
+<div class="flex justify-evenly items-center h-screen">
+    <div>
+        <img src="assets/img/meeting.png" alt="">
+    </div>
+    <div>
+        <div class="flex flex-col w-full max-w-xs text-center">
+            <label>Pseudo</label>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="pseudo">
+            <label>Email</label>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="email" placeholder="email">
+            <label>Mot de passe</label>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="password" placeholder="password">
+            <!-- à faire en bonus si le temps
+            <label>Confirmer mot de passe</label>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="password" placeholder="confirmPassword"> -->
+            <label>Nom</label>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="name">
+            <label>Prénom</label>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="description de l'évènement">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Créer mon compte</button>
+            <a routerLink="/users/login">déjà un compte ? connectez-vous</a>
+          </div>
+    </div>
+</div>

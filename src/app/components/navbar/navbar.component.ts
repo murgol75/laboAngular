@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class NavbarComponent {
 connected : boolean=false;
-connectedUser : string = "Tof";
+connectedUser : string = "Noemie";
 }
