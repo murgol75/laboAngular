@@ -28,6 +28,7 @@ export class RegisterComponent {
       console.log('pas valide')
     }
     else {
+      this.registerForm.markAllAsTouched(); 
       console.log(this.registerForm.value)
     }
   }
