@@ -10,7 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent {
    registerForm : FormGroup;
 
-  constructor(private _fb : FormBuilder, public _authService : AuthService) {
+   constructor(private _fb : FormBuilder) {
+  //  constructor(private _fb : FormBuilder, public _authService : AuthService) {
     this.registerForm = this._fb.group({
       pseudo : [null, Validators.required],
       email : [null, [Validators.required,Validators.email]],
@@ -25,13 +26,23 @@ export class RegisterComponent {
     if(!this.registerForm.valid) {
 
       console.log('pas valide')
-    }else {
-      console.log(this.registerForm.value),
-      this._authService.postUser(this.registerForm.value)
-      
+    }
+    else {
+      console.log(this.registerForm.value)
     }
   }
 
+
+  // createUser() : void {
+  //   if(!this.registerForm.valid) {
+
+  //     console.log('pas valide')
+  //   }else {
+  //     console.log(this.registerForm.value),
+  //     this._authService.postUser(this.registerForm.value)
+      
+  //   }
+  // }
 
   
 }
