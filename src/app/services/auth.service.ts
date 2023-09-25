@@ -51,6 +51,8 @@ this.http.post(this.urlApi, register).subscribe({ //this.registerForm.value envo
 
 
 
+
+
   // registerUser(user: Register) {
   //   return this.postUser(user);
   // }
