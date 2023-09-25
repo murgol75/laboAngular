@@ -5,6 +5,6 @@ export interface Event {
     startDate : Date;
     endDate : Date;
     maxGuest : number;
-    isCancel : Boolean;    picture : string;
+    isCancel : Boolean;    
     creatorId: number;
   }

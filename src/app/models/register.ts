@@ -5,3 +5,4 @@ export interface Register { // sert à s'enregistrer
     firstName : string;
     lastName : string;
 }
+

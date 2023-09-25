@@ -8,8 +8,8 @@
             <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="pseudo" formControlName="pseudo"><br>
         </div>
         <div>
-            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']">Champs requis</span>
-            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['email']">email non valide</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['required']">Champs requis</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['email']">email non valide</span>
             <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="email" formControlName="email">
         </div>
         <div>
@@ -17,10 +17,10 @@
             <span class="text-sm text-red-600" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['pattern']">min 8 charactères, Maj-Min-Chiffre-Special</span>
             <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="mot de passe" formControlName="password">
         </div>
-        <div>
+        <!-- <div>
             <span class="text-sm text-red-600" *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.errors?.['required']">Champs requis</span>
             <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="confirmer mot de passe" formControlName="confirmPassword">
-        </div>
+        </div> -->
         <div>
             <span class="text-sm text-red-600" *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.errors?.['required']">Champs requis</span>
             <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="Nom" formControlName="lastName">
