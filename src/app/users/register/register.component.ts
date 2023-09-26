@@ -21,8 +21,8 @@ export class RegisterComponent {
     // private httpClient : HttpClient
     ) {
     this.registerForm = this._fb.group({
-      pseudo : [null, Validators.required,],
-      email : [null, [Validators.required,Validators.email]],
+      pseudo : [null, [Validators.required,Validators.minLength(3),Validators.maxLength(50)],],
+      email : [null, [Validators.required,Validators.email,Validators.minLength(3),Validators.maxLength(50)]],
       password : [null, [Validators.required,Validators.pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\W).{5,}$/)]],
       firstName :[null, Validators.required],
       lastName :[null, Validators.required],

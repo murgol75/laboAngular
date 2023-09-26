@@ -5,10 +5,14 @@
     <form class="flex flex-col w-full max-w-xs text-center" [formGroup]="registerForm" (ngSubmit)="createUser()">
         <div>
             <span class="text-sm text-red-600" *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['required']">Champs requis</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('pseudo')?.errors?.['minlength']">Minimum 3 caractères</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('pseudo')?.errors?.['maxlength']">Maximum 50 caractères</span>
             <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="pseudo" formControlName="pseudo"><br>
         </div>
         <div>
-            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['required']">Champs requis</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['minlength']">Minimum 3 caractères</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['maxlength']">Maximum 50 caractères</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']">Champs requis</span>
             <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['email']">email non valide</span>
             <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="email" formControlName="email">
         </div>
