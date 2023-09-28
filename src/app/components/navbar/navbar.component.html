@@ -6,11 +6,11 @@
     <div class="flex">
         <a class="mx-2 text-xl" routerLink="/">Accueil</a>
         <a class="mx-2 text-xl" routerLink="/events/eventList">les évènements</a>
-        <p class="mx-2 text-xl" *ngIf="connected">bonjour {{connectedUser}}</p>
+        <p class="mx-2 text-xl" *ngIf="connectedUser">bonjour {{connectedUser.firstname}}</p>
         <!-- <a class="mx-2 text-xl" routerLink="/users/login" *ngIf="!connected">se connecter</a>
         <a class="mx-2 text-xl" *ngIf="connected">se deconnecter</a> -->
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="!connected" routerLink="/users/login">se connecter</button>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="connected">se déconnecter</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="!connectedUser" routerLink="/users/login">se connecter</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="connectedUser">se déconnecter</button>
 
     </div>
 </div>

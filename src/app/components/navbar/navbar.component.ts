@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-connected : boolean=false;
-connectedUser : string = "Noemie";
+
+constructor (private _authService:AuthService) {}
+connectedUser : User | undefined;
+
+
+ngOnInit() {
+  console.log("navbar ok");
+  this._authService.$connectedUser.subscribe({
+    next : (value) => {
+      this.connectedUser = value;
+      
+      console.log("next ok");
+    }
+  });
+}
+
 }

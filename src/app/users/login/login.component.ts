@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginComponent {
 
   constructor(private _fb : FormBuilder,
     private _httpClient : HttpClient,
-    private router: Router) {
+    private router: Router,
+    private _authService:AuthService) {
    this.userForm = this._fb.group({
      identifier : [null, Validators.required],
      password : [null, Validators.required],
@@ -25,19 +27,14 @@ export class LoginComponent {
  }
 
 
- login():void {
+ connect():void {
   if(!this.userForm.valid) {
     console.log('pas valide')
   } else {
-    this._httpClient.post(this.loginUrlApi, this.userForm.value).subscribe({
-      next : (res : any) => {// res est l'objet user qu'on reçoit et il peut etre de n'importe quel type
-        console.log(res);
-        // on stocke le token dans le localstorage sous le nom apiToken.  Res.accesToken est le token lié au résultat
-        localStorage.setItem('apiToken', res.accessToken);
-        this.router.navigate(['events/eventList']);
-      }
-    });
-  };
-}
 
-}
+this._authService.login(this.userForm.value);
+
+    
+      }
+    }
+  }
