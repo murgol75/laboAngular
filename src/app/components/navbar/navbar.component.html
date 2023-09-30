@@ -10,7 +10,7 @@
         <!-- <a class="mx-2 text-xl" routerLink="/users/login" *ngIf="!connected">se connecter</a>
         <a class="mx-2 text-xl" *ngIf="connected">se deconnecter</a> -->
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="!connectedUser" routerLink="/users/login">se connecter</button>
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="connectedUser">se déconnecter</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="connectedUser" (click)="logout()">se déconnecter</button>
 
     </div>
 </div>

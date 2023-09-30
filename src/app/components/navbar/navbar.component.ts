@@ -24,4 +24,9 @@ ngOnInit() {
   });
 }
 
+logout() {
+// console.log("ok ça marche")
+  this._authService.deconnect()
+}
+
 }

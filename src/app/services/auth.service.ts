@@ -51,8 +51,14 @@ login(user : UserLogin):void {
         localStorage.setItem('apiToken', res.token);
         this._$connectedUser.next(res.member)
         this._router.navigate(['events/eventList']);
-    }
-  })
-
+      }
+    })
+    
+  }
+  
+  deconnect() {
+    localStorage.removeItem('apiToken')
+    console.log("et ça ça marche aussi")
+    this._router.navigate(['/']);
 }
 }
