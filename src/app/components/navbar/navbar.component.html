@@ -1,0 +1,16 @@
+<div class="mx-8 mt-4 flex justify-between">
+    <div class="align-middle flex">
+        <img class="object-cover max-h-12" src="assets/img/logo2.png" alt="">
+        <p class="mt-2 ml-2 text-xl">Event Manager</p>
+    </div>
+    <div class="flex">
+        <a class="mx-2 text-xl" routerLink="/">Accueil</a>
+        <a class="mx-2 text-xl" routerLink="/events/eventList">les évènements</a>
+        <p class="mx-2 text-xl" *ngIf="connectedUser">bonjour {{connectedUser.firstname}}</p>
+        <!-- <a class="mx-2 text-xl" routerLink="/users/login" *ngIf="!connected">se connecter</a>
+        <a class="mx-2 text-xl" *ngIf="connected">se deconnecter</a> -->
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="!connectedUser" routerLink="/users/login">se connecter</button>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" *ngIf="connectedUser" (click)="logout()">se déconnecter</button>
+
+    </div>
+</div>

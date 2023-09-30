@@ -1,0 +1,40 @@
+<div class="flex justify-evenly items-center h-screen">
+    <div>
+        <img src="assets/img/meeting.png" alt="">
+    </div>
+    <form class="flex flex-col w-full max-w-xs text-center" [formGroup]="registerForm" (ngSubmit)="createUser()">
+        <div>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('pseudo')?.touched && registerForm.get('pseudo')?.errors?.['required']">Champs requis</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('pseudo')?.errors?.['minlength']">Minimum 3 caractères</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('pseudo')?.errors?.['maxlength']">Maximum 50 caractères</span>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="pseudo" formControlName="pseudo"><br>
+        </div>
+        <div>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['minlength']">Minimum 3 caractères</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['maxlength']">Maximum 50 caractères</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.errors?.['required']">Champs requis</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('email')?.errors?.['email']">email non valide</span>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="email" formControlName="email">
+        </div>
+        <div>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['required']">Champs requis</span>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['pattern']">min 8 charactères, Maj-Min-Chiffre-Special</span>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="password" placeholder="mot de passe" formControlName="password">
+        </div>
+        <!-- <div>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.errors?.['required']">Champs requis</span>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="confirmer mot de passe" formControlName="confirmPassword">
+        </div> -->
+        <div>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.errors?.['required']">Champs requis</span>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="Nom" formControlName="lastName">
+        </div>
+        <div>
+            <span class="text-sm text-red-600" *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.errors?.['required']">Champs requis</span>
+            <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="Prenom" formControlName="firstName">
+        </div>
+        <div>
+            <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" value="Ajouter">
+        </div>
+    </form> 
+</div>

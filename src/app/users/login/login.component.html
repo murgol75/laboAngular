@@ -1,0 +1,19 @@
+<div class="flex justify-evenly items-center h-screen">
+    <div>
+        <img src="assets/img/meeting.png" alt="">
+    </div>
+    <div>
+        <div class="flex flex-col w-full max-w-xs text-center">
+            <form [formGroup]="userForm" (ngSubmit)="connect()">
+                <label>Login ou Email</label>
+                <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="text" placeholder="identifier" formControlName="identifier">
+                <label>Mot de passe</label>
+                <input class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" type="password" placeholder="password" formControlName="password">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Me
+                    connecter</button>
+            </form>
+            <a routerLink="/users/register">pas de compte ? inscrivez-vous</a>
+
+        </div>
+    </div>
+</div>
